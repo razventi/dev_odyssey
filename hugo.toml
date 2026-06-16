@@ -41,7 +41,7 @@ home = ["HTML", "RSS", "JSON"]   # JSON = 검색 인덱스
 
   # 홈 화면 인사말
   [params.homeInfoParams]
-    Title = "라즈벤티 개발 오딧세이 👋"
+    Title = "라즈벤티 개발 오딧세이"
     Content = """
 **게임을 만들고 코드로 즐긴다.**
 
