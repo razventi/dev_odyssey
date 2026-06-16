@@ -2,7 +2,7 @@
 baseURL = "https://razventi.github.io/dev_odyssey/"
 languageCode = "ko-kr"
 defaultContentLanguage = "ko"
-title = "라즈벤트 개발 오디세이"
+title = "CodePlay"
 theme = "PaperMod"
 
 enableInlineShortcodes = true
