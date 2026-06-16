@@ -69,6 +69,11 @@ home = ["HTML", "RSS", "JSON"]   # JSON = 검색 인덱스
     url = "posts/"
     weight = 10
   [[menu.main]]
+    identifier = "about"
+    name = "소개"
+    url = "about/"
+    weight = 15
+  [[menu.main]]
     identifier = "categories"
     name = "카테고리"
     url = "categories/"
