@@ -61,10 +61,6 @@ home = ["HTML", "RSS", "JSON"]   # JSON = 검색 인덱스
     minMatchCharLength = 0
     keys = ["title", "permalink", "summary", "content"]
 
-[[params.socialIcons]]
-  name = "github"
-  url = "https://github.com/razventi/dev_odyssey"
-
 # 상단 메뉴 — url 은 앞 슬래시 없이(absLangURL 가 baseURL 하위경로를 붙임)
 [menu]
   [[menu.main]]
