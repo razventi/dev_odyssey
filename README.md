@@ -2,7 +2,7 @@
 
 GitHub Pages 로 자동 배포되는 정적 개발 블로그.
 
-- 사이트: https://razventi.github.io/dev_odyssey/
+- 사이트: https://razventi.github.io/codeplay/
 - 테마: PaperMod (git submodule)
 - 빌드/배포: push → GitHub Actions(Hugo extended **0.150.0**) → Pages
 - 홈은 시간순 글 피드 대신 **프로젝트 카드**를 보여주는 포털 형태
@@ -26,7 +26,7 @@ content/
 static/
   downloads/Policenauts_KR_v718.zip    배포 패치 zip
   img/policenauts-cover.jpg            홈 프로젝트 카드 커버
-layouts/_markup/render-link.html       내부 링크에 /dev_odyssey/ 하위경로 보정 훅
+layouts/_markup/render-link.html       내부 링크에 /codeplay/ 하위경로 보정 훅
 .github/workflows/hugo.yml             push → 빌드 → Pages 자동 배포
 ```
 
@@ -54,27 +54,27 @@ git add -A && git commit -m "새 글: 제목" && git push
 홈 화면 카드는 `hugo.toml` 의 `[params.homeInfoParams]` Content 안 `<div class="proj-grid">` 에 정의돼 있다.
 
 - **새 프로젝트 추가**: 카드 `<a class="proj-card …">` 블록을 복사해 넣고, 커버 이미지가 있으면
-  `static/img/` 에 두고 `<img src="/dev_odyssey/img/파일명">`, 없으면 `<div class="ph">이모지</div>`.
-  준비 중이면 클래스에 `soon` 추가(흐리게 표시). 링크는 `/dev_odyssey/categories/<슬러그>/`.
+  `static/img/` 에 두고 `<img src="/codeplay/img/파일명">`, 없으면 `<div class="ph">이모지</div>`.
+  준비 중이면 클래스에 `soon` 추가(흐리게 표시). 링크는 `/codeplay/categories/<슬러그>/`.
 - **프로젝트 숨김**: 해당 카드 `<a>` 블록만 지우면 됨(카테고리 파일은 남겨도 무방 — 링크만 없으면 안 보임).
 - 카드가 가리키는 **카테고리 소개 페이지**는 `content/categories/<이름>/_index.md` 로 만든다(준비중 프로젝트도 동일).
 
 > 홈에서 시간순 글 피드를 숨기기 위해 `[params] mainSections = ["projects"]`(존재하지 않는 섹션)로 둠.
 > 글들은 `/posts/`(글 목록 메뉴)와 각 카테고리 페이지에서 볼 수 있다.
 
-## 하위경로(/dev_odyssey/) 주의
+## 하위경로(/codeplay/) 주의
 
 - 사이트가 프로젝트 하위경로에 배포되므로, **상단 메뉴 url 은 앞 슬래시 없이**(`posts/`) 쓴다
   (PaperMod 가 `absLangURL` 로 baseURL 하위경로를 붙임).
 - 본문 마크다운의 루트상대 링크(`/posts/…`, `/categories/…`, `/downloads/…`)는
   `layouts/_markup/render-link.html` 훅이 자동으로 하위경로를 보정한다.
-- 홈 카드처럼 **raw HTML 의 `<a href>`/`<img src>`** 는 훅을 안 타므로 `/dev_odyssey/…` 를 직접 적는다.
+- 홈 카드처럼 **raw HTML 의 `<a href>`/`<img src>`** 는 훅을 안 타므로 `/codeplay/…` 를 직접 적는다.
 
 ## 배포 (이미 설정 완료)
 
 1. push → `.github/workflows/hugo.yml` 가 Hugo 설치 → 빌드 → Pages 배포.
 2. (최초 1회) 저장소 **Settings → Pages → Source: `GitHub Actions`** 로 설정해야 동작.
-3. 진행 상황: 저장소 **Actions** 탭. 초록 ✓ 면 https://razventi.github.io/dev_odyssey/ 반영.
+3. 진행 상황: 저장소 **Actions** 탭. 초록 ✓ 면 https://razventi.github.io/codeplay/ 반영.
 
 ## 로컬 미리보기 (선택)
 
