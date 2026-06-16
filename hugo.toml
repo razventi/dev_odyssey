@@ -24,6 +24,7 @@ home = ["HTML", "RSS", "JSON"]   # JSON = 검색 인덱스
 [params]
   env = "production"
   description = "개발·기술·게임 한글화 기록"
+  mainSections = ["projects"]   # 홈에서 시간순 글 피드 숨김(프로젝트 목록만 노출) — "projects" 섹션은 없음
   keywords = ["개발", "블로그", "한글패치", "폴리스너츠"]
   author = "라즈벤티"
   DateFormat = "2006-01-02"
@@ -47,8 +48,11 @@ home = ["HTML", "RSS", "JSON"]   # JSON = 검색 인덱스
 
 작업 노트 — 게임 개발을 중심으로, 코드와 기술 실험에 대한 생각을 호기심 가는 대로 기록합니다.
 
-대표 프로젝트: **세가 새턴 '폴리스너츠' 한국어 번역 패치** —
-[폴리스너츠 한글화 카테고리](/categories/폴리스너츠-한글화/) 에서 진행 기록과 다운로드를 볼 수 있습니다.
+### 프로젝트
+
+- 🚓 **[폴리스너츠 한글화](/categories/폴리스너츠-한글화/)** — 세가 새턴 명작 어드벤처 한국어 번역 패치
+- 🃏 **[포커와 토비](/categories/포커와-토비/)** — *준비 중*
+- 🎯 **[크로스히트](/categories/크로스히트/)** — *준비 중*
 """
 
   # 검색 페이지용 (Fuse.js)
@@ -78,11 +82,6 @@ home = ["HTML", "RSS", "JSON"]   # JSON = 검색 인덱스
     name = "카테고리"
     url = "categories/"
     weight = 20
-  [[menu.main]]
-    identifier = "polkr"
-    name = "폴리스너츠 한글화"
-    url = "categories/폴리스너츠-한글화/"
-    weight = 30
   [[menu.main]]
     identifier = "tags"
     name = "태그"
