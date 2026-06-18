@@ -1,0 +1,6 @@
+{{- $u := .Destination -}}
+{{- /* 루트상대 내부 이미지(/img/ 등)는 baseURL 하위경로를 붙여 해석. 외부는 그대로. */ -}}
+{{- if and (strings.HasPrefix $u "/") (not (strings.HasPrefix $u "//")) -}}
+  {{- $u = strings.TrimPrefix "/" $u | relLangURL -}}
+{{- end -}}
+<img src="{{ $u }}" alt="{{ .Text }}"{{ with .Title }} title="{{ . }}"{{ end }} loading="lazy" />
