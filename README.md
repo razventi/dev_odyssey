@@ -72,9 +72,41 @@ git add -A && git commit -m "새 글: 제목" && git push
 
 ## 배포 (이미 설정 완료)
 
-1. push → `.github/workflows/hugo.yml` 가 Hugo 설치 → 빌드 → Pages 배포.
-2. (최초 1회) 저장소 **Settings → Pages → Source: `GitHub Actions`** 로 설정해야 동작.
-3. 진행 상황: 저장소 **Actions** 탭. 초록 ✓ 면 https://razventi.github.io/codeplay/ 반영.
+별도 명령 없이 **`main` 브랜치에 push 하면 자동 배포**된다.
+
+```bash
+git add -A && git commit -m "변경 내용" && git push
+```
+
+흐름: push → `.github/workflows/hugo.yml` 가 Hugo extended 0.150.0 설치 → `hugo --gc --minify` 빌드 → GitHub Pages 배포. 보통 **1~2분** 안에 끝난다.
+
+### 진행 상황 확인
+
+- 저장소 **Actions** 탭에서 "Deploy Hugo site to Pages" 워크플로우 확인. 초록 ✓ 면 https://razventi.github.io/codeplay/ 에 반영됨.
+- CLI 로도 확인 가능:
+  ```bash
+  gh run list --limit 5          # 최근 실행 상태
+  gh run watch                   # 진행 중인 실행 실시간 추적
+  ```
+- 수동 재배포: Actions 탭에서 **Run workflow**(`workflow_dispatch`) 또는 `gh workflow run hugo.yml`.
+
+### "푸시했는데 화면에 안 바뀜" — 대부분 캐시 문제
+
+Actions 가 초록 ✓ 인데도 브라우저에 옛날 화면이 보이면 **배포가 안 된 게 아니라 캐시**다. GitHub Pages 응답은 `cache-control: max-age=600`(10분) + CDN 캐시가 걸려 있다.
+
+1. **강력 새로고침**: `Cmd/Ctrl + Shift + R`, 또는 시크릿 창에서 확인.
+2. 실제 라이브 내용 직접 확인(캐시 우회 아님, 서버 응답 검사용):
+   ```bash
+   curl -sI https://razventi.github.io/codeplay/ | grep -i last-modified   # 최신 배포 시각
+   curl -s --compressed https://razventi.github.io/codeplay/ | grep "찾는 텍스트"
+   ```
+3. 그래도 안 보이면 Actions 탭에서 해당 커밋의 워크플로우가 정말 성공했는지 확인.
+
+> 로컬 `public/` 는 과거 빌드 산출물이 남아 있을 수 있어 라이브와 다를 수 있다. 로컬에서 최종 결과를 확인하려면 `hugo --gc --minify` 로 다시 빌드한다.
+
+### (최초 1회만) Pages 설정
+
+저장소 **Settings → Pages → Source: `GitHub Actions`** 로 지정돼 있어야 워크플로우 배포가 동작한다. (이미 설정 완료)
 
 ## 로컬 미리보기 (선택)
 
