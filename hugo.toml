@@ -30,8 +30,7 @@ home = ["HTML", "RSS", "JSON"]   # JSON = 검색 인덱스
   DateFormat = "2006-01-02"
   defaultTheme = "auto"
   ShowReadingTime = true
-  ShowShareButtons = true
-  ShareButtons = ["x"]          # 공유 버튼은 X(트위터)만 표시
+  ShowShareButtons = false      # 글 하단 공유(X 등) 버튼 숨김
   ShowBreadCrumbs = true
   ShowCodeCopyButtons = true
   ShowToc = true
@@ -39,11 +38,6 @@ home = ["HTML", "RSS", "JSON"]   # JSON = 검색 인덱스
   ShowPostNavLinks = true
   ShowRssButtonInSectionTermList = true
   disableSpecial1stPost = false
-
-  # 소셜 링크 (홈 인사말 하단 아이콘)
-  [[params.socialIcons]]
-    name = "x"
-    url = "https://x.com/razventi"
 
   # 홈 화면 인사말
   [params.homeInfoParams]
