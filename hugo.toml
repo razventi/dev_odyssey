@@ -40,6 +40,11 @@ home = ["HTML", "RSS", "JSON"]   # JSON = 검색 인덱스
   ShowRssButtonInSectionTermList = true
   disableSpecial1stPost = false
 
+  # 소셜 링크 (홈 인사말 하단 아이콘)
+  [[params.socialIcons]]
+    name = "x"
+    url = "https://x.com/razventi"
+
   # 홈 화면 인사말
   [params.homeInfoParams]
     Title = "라즈벤티 개발 오디세이"
