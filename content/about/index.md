@@ -34,6 +34,5 @@ ShowToc: false
 
 ### 연락 · 링크
 
-<!-- 아래는 예시입니다. 실제 주소로 바꾸거나 필요 없는 줄은 지우세요. -->
-- GitHub: <!-- https://github.com/razventi -->
+- X: [@razventi](https://x.com/razventi)
 - Email: razventi@gmail.com
