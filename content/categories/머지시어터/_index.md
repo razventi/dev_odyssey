@@ -1,5 +1,6 @@
 ---
 title: "머지시어터"
+slug: "merge-theater"
 description: "준비 중인 프로젝트입니다."
 ---
 

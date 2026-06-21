@@ -1,5 +1,6 @@
 ---
 title: "크로스히트"
+slug: "crosshit"
 description: "준비 중인 프로젝트입니다."
 ---
 

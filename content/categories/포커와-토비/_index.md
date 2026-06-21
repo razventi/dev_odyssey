@@ -1,5 +1,6 @@
 ---
 title: "포커와 토비"
+slug: "poker-toby"
 description: "준비 중인 프로젝트입니다."
 ---
 
