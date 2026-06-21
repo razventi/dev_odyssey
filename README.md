@@ -24,7 +24,7 @@ content/
     폴리스너츠-한글화/                  (완료, 글 묶임)
     머지시어터/ · 포커와-토비/ · 크로스히트/   (준비 중 프로젝트)
 static/
-  downloads/Policenauts_KR_v718.zip    배포 패치 zip
+  downloads/Policenauts_KR_v1.0.0.zip  배포 패치 zip
   img/policenauts-cover.jpg            홈 프로젝트 카드 커버
 layouts/_markup/render-link.html       내부 링크에 /codeplay/ 하위경로 보정 훅
 .github/workflows/hugo.yml             push → 빌드 → Pages 자동 배포
