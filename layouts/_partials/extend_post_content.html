@@ -1,0 +1,17 @@
+{{- /* 프로젝트 하위 폴더(posts/<프로젝트>/...) 글 하단에 카테고리 복귀 링크 표시.
+       posts 바로 아래 단일 글(예: hello)에는 표시하지 않음. */ -}}
+{{- if .File }}
+{{- $dir := replace (.File.Dir | default "") "\\" "/" }}
+{{- $parts := split (trim $dir "/") "/" }}
+{{- if and (eq (index $parts 0) "posts") (gt (len $parts) 1) }}
+{{- with .GetTerms "categories" }}
+{{- $cat := index . 0 }}
+<nav class="back-to-category">
+  <a href="{{ $cat.Permalink }}" aria-label="{{ $cat.LinkTitle }} 카테고리로 돌아가기">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+    <span>{{ $cat.LinkTitle }} 글 모아보기</span>
+  </a>
+</nav>
+{{- end }}
+{{- end }}
+{{- end }}

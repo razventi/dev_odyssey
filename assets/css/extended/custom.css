@@ -1,0 +1,29 @@
+/* 글 하단 — 카테고리 복귀 링크 (홈 프로젝트 카드와 동일한 인터랙션 톤) */
+.back-to-category {
+    margin-top: 2.5rem;
+}
+
+.back-to-category a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45em;
+    padding: 0.55em 1em;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--entry);
+    color: var(--secondary);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none !important;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.back-to-category a:hover {
+    transform: translateX(-3px);
+    border-color: var(--primary);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.back-to-category svg {
+    flex-shrink: 0;
+}
