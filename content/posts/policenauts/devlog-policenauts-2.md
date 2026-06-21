@@ -6,7 +6,7 @@ tags: ["폴리스너츠", "한글패치", "작업 후기", "세가새턴"]
 ---
 
 > **📖 폴리스너츠 한글화 작업 후기** — 한 사람의 버킷 리스트가 현실이 되어가는 넉 달의 기록.
-> [① 글자를 가르치다](/posts/devlog-policenauts-1/) · **② 검은 화면과의 긴 싸움** · [③ 다 갈아엎고, 전부 새로](/posts/devlog-policenauts-3/)
+> [① 글자를 가르치다](/posts/policenauts/devlog-policenauts-1/) · **② 검은 화면과의 긴 싸움** · [③ 다 갈아엎고, 전부 새로](/posts/policenauts/devlog-policenauts-3/)
 
 > *지난 이야기:* 게임에게 한글을 가르쳐 첫 글자를 띄우고, 메뉴를 한글화했다.
 > 그리고 스토리 번역에서 가장 끈질긴 적 — 한국어가 화면에서 '툭 잘려나가는' 문제 — 와 마주쳤다.
@@ -90,4 +90,4 @@ tags: ["폴리스너츠", "한글패치", "작업 후기", "세가새턴"]
 
 ---
 
-> [← 이전 편 ① 글자를 가르치다](/posts/devlog-policenauts-1/) ｜ 다음 편 → [**③ 다 갈아엎고, 전부 새로**](/posts/devlog-policenauts-3/)
+> [← 이전 편 ① 글자를 가르치다](/posts/policenauts/devlog-policenauts-1/) ｜ 다음 편 → [**③ 다 갈아엎고, 전부 새로**](/posts/policenauts/devlog-policenauts-3/)

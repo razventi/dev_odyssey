@@ -6,7 +6,7 @@ tags: ["폴리스너츠", "한글패치", "작업 후기", "세가새턴"]
 ---
 
 > **📖 폴리스너츠 한글화 작업 후기** — 한 사람의 버킷 리스트가 현실이 되어가는 넉 달의 기록.
-> [① 글자를 가르치다](/posts/devlog-policenauts-1/) · [② 검은 화면과의 긴 싸움](/posts/devlog-policenauts-2/) · **③ 다 갈아엎고, 전부 새로**
+> [① 글자를 가르치다](/posts/policenauts/devlog-policenauts-1/) · [② 검은 화면과의 긴 싸움](/posts/policenauts/devlog-policenauts-2/) · **③ 다 갈아엎고, 전부 새로**
 
 > *지난 이야기:* 두 달간의 검은 화면 끝에 정렬 오류라는 진범을 잡았고,
 > 게임이 대사를 불러오는 구조의 지도를 손에 넣었다.
@@ -140,4 +140,4 @@ tags: ["폴리스너츠", "한글패치", "작업 후기", "세가새턴"]
 
 ---
 
-> [← 이전 편 ② 검은 화면과의 긴 싸움](/posts/devlog-policenauts-2/) ｜ 📥 [패치 다운로드 · 적용법](/posts/download/)
+> [← 이전 편 ② 검은 화면과의 긴 싸움](/posts/policenauts/devlog-policenauts-2/) ｜ 📥 [패치 다운로드 · 적용법](/posts/policenauts/download/)

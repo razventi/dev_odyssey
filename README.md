@@ -16,10 +16,12 @@ content/
   search.md                            검색 페이지         → /search/
   posts/                               블로그 글
     hello.md                           블로그 시작 글 (카테고리: 잡담)
-    download.md                        패치 다운로드·적용법·이용조건(폴리스너츠 한글화)
-    changelog.md                       패치 변경 이력
-    policenauts-localization-guide.md  한글화 기술 가이드
-    devlog-policenauts-1~3.md          개발기 3부작
+    policenauts/                        폴리스너츠 한글화 글 묶음 (프로젝트별 하위 폴더)
+      about.md                         프로젝트 소개
+      download.md                      패치 다운로드·적용법·이용조건
+      changelog.md                     패치 변경 이력
+      policenauts-localization-guide.md  한글화 기술 가이드
+      devlog-policenauts-1~3.md        개발기 3부작
   categories/                          카테고리 소개 페이지(_index.md)
     폴리스너츠-한글화/                  (완료, 글 묶임)
     머지시어터/ · 포커와-토비/ · 크로스히트/   (준비 중 프로젝트)
