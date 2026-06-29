@@ -13,8 +13,16 @@ $known = @(
   @{ Label='Disc2 한글 데이터(Track1)'; Sha='e90d415ee1b842d099c00ce16977c6b62f00bb1f'; Size=567704592 },
   @{ Label='Disc3 원본 데이터(Track1)'; Sha='7c837f0a3a1c12ba430c0bf4feefabf518629220'; Size=513533328 },
   @{ Label='Disc3 한글 데이터(Track1)'; Sha='ae33cecbf009d1d65f6b566b031a080d721948ef'; Size=521026800 },
-  @{ Label='오디오(Track2, 전 디스크 공통)'; Sha='c82651fc2d60c768dbfcc75b9cdec580ec07d307'; Size=4812192 }
+  @{ Label='오디오(Track2, redump 정본·pregap 포함)'; Sha='c82651fc2d60c768dbfcc75b9cdec580ec07d307'; Size=4812192 }
 )
+
+# 오디오 트랙은 드라이브 read-offset/pregap 처리에 따라 SHA-1이 정상적으로 달라집니다.
+# 패치는 데이터 트랙(Track1)에만 적용되므로, 오디오는 '크기'로만 인식해 정상 처리합니다.
+#   4,812,192 = redump 정본(pregap 150섹터 포함)
+#   4,459,392 = 합본 BIN 분리본(pregap 미포함, ImgBurn+split.ps1 등) — 게임 동작에 지장 없음
+$audioSizes = @(4812192, 4459392)
+# 데이터 트랙의 정본 크기 모음 (크기는 같은데 SHA만 다르면 = 드라이브 오독/손상)
+$dataSizes = $known | Where-Object { $audioSizes -notcontains $_.Size } | ForEach-Object { $_.Size }
 
 if (-not $Files) { $Files = Get-ChildItem -Filter *.bin | ForEach-Object { $_.FullName } }
 if (-not $Files) { Write-Host "검사할 .bin 파일이 없습니다." -ForegroundColor Yellow; return }
@@ -32,13 +40,13 @@ foreach ($f in $Files) {
   Write-Host ("  SHA-1 : $sha")
   if ($match) {
     Write-Host ("  ==> [OK] $($match.Label)") -ForegroundColor Green
+  } elseif ($audioSizes -contains $size) {
+    # 오디오 트랙: SHA-1이 정본과 달라도 정상 (패치 무관, 게임 동작에 지장 없음)
+    Write-Host ("  ==> [정상] 오디오 트랙(Track2) — SHA-1이 정본과 달라도 OK, 패치는 데이터 트랙에만 적용됩니다") -ForegroundColor Green
+  } elseif ($dataSizes -contains $size) {
+    Write-Host ("  ==> [경고] 데이터 트랙 크기와 같으나 SHA-1 불일치 → 드라이브 오독/손상/다른 리비전 의심") -ForegroundColor Yellow
   } else {
-    $sizeHint = $known | Where-Object { $_.Size -eq $size }
-    if ($sizeHint) {
-      Write-Host ("  ==> [경고] 크기는 '$($sizeHint.Label)'와 같으나 SHA-1 불일치 → 손상/다른 리비전 의심") -ForegroundColor Yellow
-    } else {
-      Write-Host ("  ==> [불일치] 정본 표에 없는 파일 (병합 BIN/.iso/다른 덤프 의심)") -ForegroundColor Red
-    }
+    Write-Host ("  ==> [불일치] 정본 표에 없는 파일 (병합 BIN/.iso/다른 덤프 의심)") -ForegroundColor Red
   }
 }
 Write-Host ""
